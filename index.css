@@ -1,0 +1,464 @@
+/* Simple CSS for index.html */
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #ff5f02;
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #cc5200;
+}
+
+.btn-large {
+    padding: 16px 32px;
+    font-size: 18px;
+}
+
+/* Hide Menu Checkbox */
+.menu-toggle {
+    display: none;
+}
+
+/* Top Navigation Bar */
+.navbar {
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 34px;
+
+    color:  #ff5100;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: flex;
+    flex-direction: column; border: 1.5px solid black; border-radius: 11px;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger div{
+    width: 25px;
+    height: 3px;
+    background-color: rgb(255, 98, 0);
+    border-radius: 3px;
+}
+.hamburger .change{
+    width:15px;
+}
+
+.hamburger:hover div {
+    background-color: #333;
+}
+
+
+/* Sidebar Menu */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100%;
+    background-color: #ff6600;
+    z-index: 1001;
+    padding-top: 80px;
+    transition: right 0.3s;
+}
+
+.close-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+.sidebar-links li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-links li a {
+    display: block;
+    padding: 18px 30px;
+    color: white;
+    font-size: 16px;
+}
+
+.sidebar-links li a:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-links li a.active {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Overlay Background */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+}
+
+/* Show Sidebar When Checked */
+.menu-toggle:checked ~ .sidebar {
+    right: 0;
+}
+
+.menu-toggle:checked ~ .overlay {
+    display: block;
+}
+
+/* Hero Section */
+.hero {
+    background-image:url("https://img.freepik.com/free-vector/abstract-shiny-lines-white-gray-minimal-background-design_84443-2819.jpg?semt=ais_hybrid&w=740&q=80");
+    background-size: cover;
+    color: rgb(0, 0, 0);
+    padding: 150px 20px 100px;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.highlight {
+    color:  rgb(252, 97, 0);
+
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.search-box {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    background: white;
+    border-radius: 50px;
+    overflow: hidden;
+    padding: 5px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 15px 25px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-box .btn {
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: 1px solid #ff6600;
+
+}
+.search-box .btn:hover{
+    background-color: white;
+    color: #ff6600;
+    border: 1px solid #ff6600;
+}
+
+.hero-note {
+    font-size: 14px;
+}
+
+/* Clients Section */
+.clients {
+    background-color: white;
+    padding: 80px 20px;
+    text-align: center;
+    
+}
+
+.section-label {
+    color: #ff6600;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.clients h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+}
+/* repeating the brand images to create a seamless loop */
+.brand img {
+    max-width:100%;
+    height: auto;
+    animation: moveRightToLeft 10s linear infinite ;
+}
+
+@keyframes moveRightToLeft {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Call to Action Section */
+.cta {
+    background:linear-gradient(black,grey);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+    padding:80px;
+    text-align: center;
+    border: 3px solid #ff6600;
+}
+
+.cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta h2 {
+    font-size:46px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.cta p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #ff5500;
+}
+
+/* Giving Back Section */
+.main-bg {
+    background-color: #ff6600;
+    padding: 80px 20px;
+    color: white;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.header p {
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.intro-text {
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.content-box {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+.card {
+    background: white;
+    color: #333;
+    padding: 30px;
+    border-radius: 15px;
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-header h2 {
+    font-size: 22px;
+}
+
+.arrow {
+    font-size: 20px;
+    color: #ff6600;
+}
+
+.card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+}
+
+
+.resources-grid {
+   display:flex;
+    gap: 25px;
+    margin-top: 40px;
+}
+.resource-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 250px;  transition: all 0.31s ease-in;
+    border:1.2px solid black; border-radius: 20px;padding: 16px;
+background-color: rgba(249, 230, 214, 0.247); box-shadow: 7px 8px 1px rgba(0, 0, 0, 0.1);
+}
+.resource-card:hover{
+  transform: translateY(-21px) scale(1.12);
+}
+
+.section-label {
+    color: #ff6600;
+    text-align:center;
+    font-size: 34px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    margin-top:18px;
+}
+.giving-header h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+.footer {
+    background-color: #ff5100;
+    color: white;
+    padding: 20px;
+    margin-top:4vw;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-section-1 h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.footer-section-1 h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+
+.footer-section-2 ul {
+    margin-bottom: 10px; display: flex; justify-content: space-between; width:100%;
+}
+
+.footer-section-2 ul li a:hover {
+    color: #333;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a:hover {
+    color: #333;
+}
+
